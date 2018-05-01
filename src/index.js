@@ -20,10 +20,9 @@ io.on('connection', (socket) => {
   socket.on('new_message', data => {
     if (typeof data === 'object') {
       if (typeof data.username === 'string' && typeof data.message === 'string') {
-
         const collection = database.collection('message')
-        collection.insert(data)
 
+        collection.insert(data)
         socket.emit('add_message', data);
         socket.broadcast.emit('add_message', data);
       }

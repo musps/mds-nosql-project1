@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>real time chat - mongodb</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="/assets/css/css.css" />
+  </head>
+  <body>
+
+<div class="app">
+
+  <!-- /// -->
+  <header class="header">
+    <div class="col info">
+      <h1>MongoChat</h1>
+      <button id="btnClearContent">Clear</button>
+    </div>
+    <div class="col username">
+      <input  type="text" 
+              id="username"
+              placeholder="What's your name ?" />
+    </div>
+  </header>
+
+  <!-- /// -->
+  <div class="main">
+  </div>
+
+  <!-- /// -->
+  <footer class="footer">
+    <textarea id="message"
+              placeholder="Enter message..."></textarea>
+  </footer>
+</div>
+
+<!-- /// -->
+<template id="template_mMessage">
+  <div class="mMessage">
+    <div class="content">
+      <label>{{username}}</label>
+      <p>
+        {{message}}
+      </p>
+    </div>
+  </div>
+</template>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/js.js"></script>
+  </body>
+</html>
